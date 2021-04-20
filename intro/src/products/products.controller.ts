@@ -7,10 +7,12 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
 import { ProductService } from './products.service';
 import { Product } from './products.model';
 
+@ApiTags('products')
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
